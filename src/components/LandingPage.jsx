@@ -73,6 +73,7 @@ const TakeoffPortfolio = () => {
   const controls = useAnimation();
   const [ref, inView] = useInView();
   const [activeMilestone, setActiveMilestone] = React.useState(0);
+  const [isMuted, setIsMuted] = useState(true);
 
   // Animation variants
   const containerVariants = {
@@ -177,6 +178,29 @@ const TakeoffPortfolio = () => {
       },
     },
   };
+
+  const toggleMute = () => {
+    setIsMuted((prev) => !prev);
+    const iframes = document.querySelectorAll("iframe");
+    iframes.forEach((iframe) => {
+      const src = iframe.src;
+      if (isMuted) {
+        iframe.src = src.replace("mute=1", "mute=0");
+      } else {
+        iframe.src = src.replace("mute=0", "mute=1");
+      }
+    });
+  };
+
+  useEffect(() => {
+    if (activeTab === "Latest Ideas" || activeTab === "Resources") {
+      const iframes = document.querySelectorAll("iframe");
+      iframes.forEach((iframe) => {
+        const src = iframe.src;
+        iframe.src = src; // Force reload to trigger autoplay
+      });
+    }
+  }, [activeTab]);
 
   const steps = [
     {
@@ -377,7 +401,7 @@ const TakeoffPortfolio = () => {
 
   const pdlcImages = [
     {
-      url: "/pdlc.png",
+      url: "/presentation/pdlc.png",
     },
   ];
 
@@ -490,26 +514,28 @@ const TakeoffPortfolio = () => {
       icon: <FaLaptopCode className="text-2xl text-[#34B3AA]" />,
       latestProjects: [
         {
-          title: "AI-Powered Medical Diagnosis",
+          title: "DEMENTIA CLASSIFICATION USING DEEP LEARNING APPROACHES",
           media: {
             type: "video",
-            src: "https://youtu.be/TMYLWOWqxs8?si=yGbXieYZ3gs4m4Mh",
-            fallback: "https://via.placeholder.com/2070x1380?text=Medical+AI",
+            src: "https://www.youtube.com/embed/jqI970v4-c4?si=67bP2czWl7GHfxAl",
+            fallback:
+              "https://www.youtube.com/embed/jqI970v4-c4?si=67bP2czWl7GHfxAl",
           },
           description:
-            "Deep learning system for early disease detection using medical imaging",
-          link: "https://takeoffprojects.com/projects/medical-ai",
+            "Discover how artificial intelligence is revolutionizing healthcare! In this video, we explore how deep learning models are being used to accurately classify and detect dementia—a critical step toward early diagnosis and better patient care.",
+          link: "https://takeoffprojects.com/",
         },
         {
-          title: "Smart Traffic Management",
+          title: "DEEP FAKE AUDIO VIDEO DETECTION USING DEEP LEARNING",
           media: {
-            type: "image",
-            src: "https://images.unsplash.com/photo-1509316785289-025f5b846b35?q=80&w=2070&auto=format&fit=crop",
-            fallback: "https://via.placeholder.com/2070x1380?text=Traffic+AI",
+            type: "video",
+            src: "https://www.youtube.com/embed/c5dn5RJeNy4?si=V5piUX0af_P1i8-6",
+            fallback:
+              "https://www.youtube.com/embed/c5dn5RJeNy4?si=V5piUX0af_P1i8-6",
           },
           description:
-            "Computer vision system for real-time traffic analysis and optimization",
-          link: "https://takeoffprojects.com/projects/traffic-ai",
+            " we dive deep into “Deepfake Audio and Video Detection Using Deep Learning” — a powerful and highly relevant project that addresses one of today’s most pressing digital threats!",
+          link: "https://takeoffprojects.com/",
         },
       ],
       LatestProjects: [
@@ -683,26 +709,27 @@ const TakeoffPortfolio = () => {
       icon: <FaLaptopCode className="text-2xl text-[#34B3AA]" />,
       latestProjects: [
         {
-          title: "E-Commerce Platform",
+          title: "LOCAL BUSINESS PROMOTION HUB",
           media: {
             type: "video",
-            src: "https://www.youtube.com/embed/example2",
-            fallback: "https://via.placeholder.com/2070x1380?text=E-Commerce",
+            src: "https://www.youtube.com/embed/SPUm_3OYflM?si=6_dZIH6ot8L3ZDJ-",
+            fallback:
+              "https://www.youtube.com/embed/SPUm_3OYflM?si=6_dZIH6ot8L3ZDJ-",
           },
           description:
-            "Full-featured online shopping platform with payment integration",
-          link: "https://takeoffprojects.com/projects/ecommerce",
+            "we showcase a Local Business Promotion Hub—an innovative project designed to support local businesses by providing an online platform for visibility, engagement, and customer connection. Developed as a CSE project, this hub helps local businesses reach wider audiences through targeted promotions, listings, and interactive features, all tailored for community engagement.",
+          link: "https://takeoffprojects.com/",
         },
         {
-          title: "Task Management System",
+          title: "Codesafe Pay Android App | Secure Mobile Payments Made Easy",
           media: {
-            type: "image",
-            src: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=2070&auto=format&fit=crop",
+            type: "video",
+            src: "https://www.youtube.com/embed/duiE0Hg9yHw?si=9amKQa5u7Ii71BLS",
             fallback: "https://via.placeholder.com/2070x1380?text=Task+App",
           },
           description:
-            "Collaborative project management tool with real-time updates",
-          link: "https://takeoffprojects.com/projects/task-manager",
+            "Discover the Codesafe Pay Android App! This secure mobile payment solution makes transactions fast, reliable, and hassle-free. Learn about its features, encryption methods, and how it ensures the safety of your financial data. Watch now to explore the future of secure payments!",
+          link: "https://takeoffprojects.com/",
         },
       ],
       LatestProjects: [
@@ -828,28 +855,29 @@ const TakeoffPortfolio = () => {
       icon: <FaLaptopCode className="text-2xl text-[#34B3AA]" />,
       latestProjects: [
         {
-          title: "Blockchain-Enabled Voting System",
+          title: "Certification Verification and Validation using Block chain",
           media: {
             type: "video",
-            src: "https://www.youtube.com/embed/example3",
+            src: "https://www.youtube.com/embed/THXinXGAWOo?si=m0jnDZW8uyhDSETA",
             fallback:
-              "https://via.placeholder.com/2070x1380?text=Voting+System",
+              "https://www.youtube.com/embed/THXinXGAWOo?si=m0jnDZW8uyhDSETA",
           },
           description:
-            "Secure voting platform using Ethereum and React frontend",
-          link: "https://takeoffprojects.com/projects/blockchain-voting",
+            "In this video, we explore how Blockchain technology is revolutionizing the process of Certificate Verification and Validation. By leveraging the decentralized and tamper-proof nature of blockchain, this system ensures that academic, professional, and other certifications are securely stored, verified, and validated in a way that is transparent and resistant to fraud. We’ll walk through the key features, the technology behind the solution, and how it benefits educational institutions, employers, and certificate holders.",
+          link: "https://takeoffprojects.com/",
         },
         {
-          title: "Decentralized Certificate Storage",
+          title:
+            "Blockchain in Banking: Transforming Financial Systems for the Future",
           media: {
-            type: "image",
-            src: "https://img.freepik.com/premium-photo/blockchain-technology-background_1276406-306.jpg?w=740",
+            type: "video",
+            src: "https://www.youtube.com/embed/wk8waoD5KVw?si=7r7jvt8SgnuCOc4j",
             fallback:
               "https://via.placeholder.com/2070x1380?text=Certificate+Storage",
           },
           description:
-            "Certificate verification system using IPFS and Ethereum",
-          link: "https://takeoffprojects.com/projects/certificate-storage",
+            "Welcome to the revolution in financial technology! This video explores how blockchain is transforming the banking sector, enhancing security, transparency, and efficiency. Learn how decentralized systems streamline transactions, reduce fraud, and build trust in financial systems. Watch now to discover the incredible potential of blockchain in modern banking!",
+          link: "https://takeoffprojects.com/",
         },
       ],
       LatestProjects: [
@@ -1132,27 +1160,29 @@ const TakeoffPortfolio = () => {
       ],
       latestProjects: [
         {
-          title: "Solar Energy Monitoring",
+          title:
+            "Noval-Simulation of Hybrid P&O Fuzzy-Based Maximum Power PointTracking MPPT Algorithm Photovoltaic",
           media: {
             type: "video",
-            src: "https://www.youtube.com/embed/4rR0wA2H7Zs?autoplay=1&mute=1&controls=1",
+            src: "https://www.youtube.com/embed/Uj0hk2wwoSs?si=KP6uld0ceo9rlOX5",
             fallback:
-              "https://via.placeholder.com/2070x1380?text=Solar+Monitoring",
+              "https://www.youtube.com/embed/Uj0hk2wwoSs?si=KP6uld0ceo9rlOX5",
           },
           description:
-            "A system to monitor and optimize solar energy output in real-time.",
-          link: "https://takeoffprojects.com/projects/solar-monitoring",
+            "we implement a Hybrid Perturb and Observe (P&O) + Fuzzy Logic Controller (FLC)-based Maximum Power Point Tracking (MPPT) algorithm for photovoltaic (PV) systems operating under partial shading conditions (PSC). This hybrid approach combines the simplicity of P&O with the intelligence of fuzzy logic to achieve faster convergence, better accuracy, and enhanced efficiency compared to conventional MPPT methods.",
+          link: "https://takeoffprojects.com/",
         },
         {
-          title: "Smart Grid Controller",
+          title:
+            "Improved Control Strategy, Power Management & Capacity Optimization, Hybrid AC/DC Microgrids-Review",
           media: {
-            type: "image",
-            src: "https://images.unsplash.com/photo-1517420704959-59240f766499?q=80&w=2070&auto=format&fit=crop",
-            fallback: "https://via.placeholder.com/2070x1380?text=Smart+Grid",
+            type: "video",
+            src: "https://youtu.be/gWNhM5segLc?si=GMP15wg_i5p9zFHU",
+            fallback: "https://youtu.be/gWNhM5segLc?si=GMP15wg_i5p9zFHU",
           },
           description:
-            "An IoT-based controller for efficient energy distribution.",
-          link: "https://takeoffprojects.com/projects/smart-grid",
+            "This video presents an advanced control strategy for hybrid AC/DC microgrids, focusing on reactive power compensation and reduction in the capacity of interlinking converters through Electric Vehicle (EV) participation. The integration of EVs as active agents enables dynamic power balancing and enhances system efficiency.",
+          link: "https://takeoffprojects.com/",
         },
       ],
     },
@@ -1264,23 +1294,28 @@ const TakeoffPortfolio = () => {
       icon: <FaMicrochip className="text-2xl text-[#34B3AA]" />,
       latestProjects: [
         {
-          title: "Smart Home IoT Device",
+          title:
+            "Smart Monitoring of Animal Presence on Railway Tracks Using IoT",
           media: {
             type: "video",
-            src: "https://youtu.be/pMjed-2p18Q",
-            fallback: "https://via.placeholder.com/2070x1380?text=IoT+Device",
+            src: "https://www.youtube.com/embed/4d5CWcM9V6k?si=fgep2L4qIv7rpkHX",
+            fallback:
+              "https://www.youtube.com/embed/4d5CWcM9V6k?si=fgep2L4qIv7rpkHX",
           },
-          description: "A smart IoT device for home automation and monitoring.",
+          description:
+            "Prevent train-animal collisions with this innovative IoT-based animal detection system. This project uses sensors and real-time alerts to detect the presence of animals on railway tracks, ensuring improved railway safety and saving wildlife.",
           link: "https://takeoffprojects.com/projects/iot-device",
         },
         {
-          title: "Autonomous Drone",
+          title: "Smart Engine Lock Using Biometric and Keypad Authentication",
           media: {
-            type: "image",
-            src: "https://youtu.be/4d5CWcM9V6k",
-            fallback: "https://via.placeholder.com/2070x1380?text=Drone",
+            type: "video",
+            src: "https://www.youtube.com/embed/pMjed-2p18Q?si=j7ZzFnUPcRJA2hjM",
+            fallback:
+              "https://www.youtube.com/embed/pMjed-2p18Q?si=j7ZzFnUPcRJA2hjM",
           },
-          description: "An AI-powered autonomous drone for surveillance.",
+          description:
+            "This project integrates biometric fingerprint authentication and a secure keypad-based password system to enhance vehicle safety and prevent unauthorised access. Perfect for engineering students specialising in Embedded Systems, IoT, or Electronics.",
           link: "https://takeoffprojects.com/projects/drone",
         },
       ],
@@ -1468,26 +1503,29 @@ const TakeoffPortfolio = () => {
       icon: <FaProjectDiagram className="text-2xl text-[#34B3AA]" />,
       latestProjects: [
         {
-          title:
-            "A Novel Ultra-Low-Voltage Level Shifter Featuring Re-Configurable Logic and Time-Borrowing Latch",
+          title: "Reversible logic design of full adder using gdi technique",
           media: {
             type: "video",
-            src: "https://www.youtube.com/watch?v=F7uJYgyqeQA",
-            fallback: "https://via.placeholder.com/2070x1380?text=ASIC+Design",
+            src: "https://www.youtube.com/embed/itT67rtPjDo?si=UMPVoPCn54WNkf_y",
+            fallback:
+              "https://www.youtube.com/embed/itT67rtPjDo?si=UMPVoPCn54WNkf_y",
           },
-          description: "A low-power ASIC for energy-efficient computing.",
-          link: "https://takeoffprojects.com/projects/asic-design",
+          description:
+            "The speed of the memory remains a bottleneck in the overall design of various computational systems.",
+          link: "https://takeoffprojects.com/",
         },
         {
           title:
-            "Design and Optimization of a Fault-Tolerant LFSR for Low-Power Systems",
+            "Effective Hardware Accelerator for 2D DCT IDCT Using Improved Loeffler Architecture",
           media: {
             type: "video",
-            src: "https://youtu.be/nNAuX0GbLNg",
-            fallback: "https://via.placeholder.com/2070x1380?text=FPGA+AI",
+            src: "https://www.youtube.com/embed/UET9QaVgBBY?si=4D57zgsbdxEutiDO",
+            fallback:
+              "https://www.youtube.com/embed/UET9QaVgBBY?si=4D57zgsbdxEutiDO",
           },
-          description: "An FPGA-based accelerator for AI workloads.",
-          link: "https://takeoffprojects.com/projects/fpga-ai",
+          description:
+            "This design optimizes the computation of Discrete Cosine Transform (DCT) and Inverse DCT (IDCT), boosting performance in image and video processing. Learn how the enhanced architecture reduces complexity and improves efficiency in hardware implementations, making it ideal for real-time multimedia applications.",
+          link: "https://takeoffprojects.com/",
         },
       ],
       careerPath:
@@ -1630,26 +1668,30 @@ const TakeoffPortfolio = () => {
       icon: <FaLaptopFile className="text-2xl text-[#34B3AA]" />,
       latestProjects: [
         {
-          title: "Medical Image Analysis",
+          title:
+            "A Comprehensive Approach to Brain Tumor Classification and Stage Classification Using Neural Network",
           media: {
             type: "video",
-            src: "https://www.youtube.com/embed/0U1d5k8E7zQ?autoplay=1&mute=1&controls=1",
+            src: "https://www.youtube.com/embed/1D6MMWRXziM?si=zyQiSVA6H9Zqwcm",
             fallback:
-              "https://via.placeholder.com/2070x1380?text=Medical+Imaging",
+              "https://www.youtube.com/embed/1D6MMWRXziM?si=zyQiSVA6H9Zqwcm",
           },
-          description: "Advanced image processing for medical diagnostics.",
-          link: "https://takeoffprojects.com/projects/medical-imaging",
+          description:
+            "In this video, we present a comprehensive AI-based method for brain tumor classification and staging, utilizing K-Means image segmentation and Neural Network-based classification. This hybrid technique enhances detection accuracy and stage prediction using medical imaging like MRI scans.",
+          link: "https://takeoffprojects.com/",
         },
         {
-          title: "Control System Simulator",
+          title:
+            "Cluster Head Selection Strategy of WSN Based on Binary Multi-Objective Adaptive Fish Migration...",
           media: {
-            type: "image",
-            src: "https://images.unsplash.com/photo-1518770660439-4636190af475?q=80&w=2070&auto=format&fit=crop",
+            type: "video",
+            src: "https://www.youtube.com/embed/NzMG_G067Z8?si=UzSf8N2eGWGD2bTi",
             fallback:
-              "https://via.placeholder.com/2070x1380?text=Control+Systems",
+              "https://www.youtube.com/embed/NzMG_G067Z8?si=UzSf8N2eGWGD2bTi",
           },
-          description: "A simulator for designing and testing control systems.",
-          link: "https://takeoffprojects.com/projects/control-simulator",
+          description:
+            "This video explores an advanced strategy for Cluster Head Selection in Wireless Sensor Networks (WSN) using a Binary Multi-Objective Adaptive Fish Migration Optimization Algorithm. This unique algorithm optimizes the cluster head selection process by balancing multiple objectives such as energy efficiency, load distribution, and network lifespan. Inspired by the behaviour of fish migration, the adaptive nature of this approach ensures optimal performance in dynamic environments.",
+          link: "https://takeoffprojects.com/",
         },
       ],
     },
@@ -1787,15 +1829,29 @@ const TakeoffPortfolio = () => {
       icon: <FaCloudUploadAlt className="text-2xl text-[#34B3AA]" />,
       latestProjects: [
         {
-          title: "Beyond Life",
+          title: "Data Security of Cloud in Cloud Computing",
           media: {
             type: "video",
-            src: "/BeYondLife-DEMO.mkv",
-            fallback: "/BeYondLife-DEMO.mkv",
+            src: "https://www.youtube.com/embed/aWxM79VWGCI?si=YeBYkn15CZCmr7jf",
+            fallback:
+              "https://www.youtube.com/embed/aWxM79VWGCI?si=YeBYkn15CZCmr7jf",
           },
           description:
-            "Beyond Life is a secure web-based digital will management system built with the MERN stack. It enables users to create encrypted digital wills, assign beneficiaries, and manage permissions using advanced cryptographic techniques for confidentiality, integrity, and transparency.",
-          link: "https://takeoffprojects.com/project-details/beyond_life--19587",
+            "Cloud computing is a paradigm that provides massive computations capacity and huge memory space at a low cost.",
+          link: "https://takeoffprojects.com/",
+        },
+        {
+          title:
+            "A Lightweight Secure Data Sharing Scheme For Mobile Cloud Computing",
+          media: {
+            type: "video",
+            src: "https://www.youtube.com/embed/1SgOM_Q02Ck?si=sLgS-VZ0mku_s-DY",
+            fallback:
+              "https://www.youtube.com/embed/1SgOM_Q02Ck?si=sLgS-VZ0mku_s-DY",
+          },
+          description:
+            "With the popularity of cloud computing, mobile devices can store/retrieve personal data from anywhere at any time. Consequently, the data security problem in mobile cloud becomes more and more severe and prevents further development of mobile cloud.",
+          link: "https://takeoffprojects.com/",
         },
       ],
     },
@@ -2873,7 +2929,7 @@ const TakeoffPortfolio = () => {
   // Generate image paths
   const imagePaths = Array.from(
     { length: 30 },
-    (_, i) => `/review-${i + 1}.jpeg`
+    (_, i) => `/presentation/review-${i + 1}.jpeg`
   );
 
   // Handle window resize
@@ -3232,7 +3288,7 @@ const TakeoffPortfolio = () => {
               className="lg:w-1/2 relative"
             >
               <img
-                src="/images.png"
+                src="/presentation/images.png"
                 alt="Takeoff Team"
                 className="rounded-lg shadow-xl w-full"
                 style={{ height: "450px" }}
@@ -4074,110 +4130,136 @@ const TakeoffPortfolio = () => {
         </div>
       </motion.div>
 
-     <section className="py-16 px-4 sm:px-8 lg:px-16 bg-gradient-to-b from-gray-50 to-white relative overflow-hidden z-10">
-  {/* Decorative elements */}
-  <div className="absolute -bottom-20 -right-20 w-64 h-64 rounded-full bg-teal-100/20 blur-3xl"></div>
-  <div className="absolute -top-20 -left-20 w-64 h-64 rounded-full bg-teal-100/10 blur-3xl"></div>
+      <section className="py-16 px-4 sm:px-8 lg:px-16 bg-gradient-to-b from-gray-50 to-white relative overflow-hidden z-10">
+        {/* Decorative elements */}
+        <div className="absolute -bottom-20 -right-20 w-64 h-64 rounded-full bg-teal-100/20 blur-3xl"></div>
+        <div className="absolute -top-20 -left-20 w-64 h-64 rounded-full bg-teal-100/10 blur-3xl"></div>
 
-  <div className="max-w-6xl mx-auto relative z-10">
-    {/* Section Header */}
-    <motion.div
-      className="text-center mb-12"
-      initial={{ opacity: 0, y: -30 }}
-      animate={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.6, ease: "easeOut" }}
-    >
-      <h2 className="text-3xl sm:text-4xl font-bold text-gray-800 mb-4">
-        From the <span className="text-teal-600">Founder's Desk</span>
-      </h2>
-      <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-        Words of wisdom for aspiring technologists
-      </p>
-    </motion.div>
+        <div className="max-w-6xl mx-auto relative z-10">
+          {/* Section Header */}
+          <motion.div
+            className="text-center mb-12"
+            initial={{ opacity: 0, y: -30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, ease: "easeOut" }}
+          >
+            <h2 className="text-3xl sm:text-4xl font-bold text-gray-800 mb-4">
+              From the <span className="text-teal-600">Founder's Desk</span>
+            </h2>
+            <p className="text-lg text-gray-600 max-w-2xl mx-auto">
+              Words of wisdom for aspiring technologists
+            </p>
+          </motion.div>
 
-    <div className="flex flex-col lg:flex-row gap-8 items-start">
-      {/* Content (80% width) */}
-      <motion.div
-        className="w-full lg:w-4/5"
-        initial={{ opacity: 0, x: -20 }}
-        whileInView={{ opacity: 1, x: 0 }}
-        transition={{ duration: 0.6 }}
-        viewport={{ once: true }}
-      >
-        <div className="bg-white p-8 sm:p-10 rounded-2xl shadow-lg duration-300 border border-gray-100">
-          <div className="prose prose-lg max-w-none text-gray-700 space-y-5">
-            <p className="text-lg font-medium text-teal-600">Dear Students,</p>
-            
-            <p>
-              When we began in 2007, we witnessed countless students struggling—not from lack of talent, but from absence of proper guidance during their crucial final-year projects.
-            </p>
-            
-            <div className="relative pl-6 border-l-4 border-teal-400 italic bg-teal-50/50 p-4 rounded-r-lg">
-              <p>
-                That's why we created <strong className="font-semibold text-teal-700">Takeoff Edu Group</strong>—to provide real project mentorship that fosters growth, not just grades.
-              </p>
-            </div>
-            
-            <p>
-              This academic support evolved into <strong className="font-semibold">Young Minds Technology Solutions</strong>, a full-fledged software company. Remarkably, it all began with those very college projects many underestimate. These projects became our training ground for innovation, problem-solving, and product development.
-            </p>
-            
-            <div className="bg-teal-50 p-5 rounded-lg border border-teal-100">
-              <p className="font-medium text-teal-800">
-                Every product we've built, every client served, and every student we've hired traces back to those foundational project experiences.
-              </p>
-            </div>
-            
-            <p className="text-lg font-semibold text-gray-800">
-              My earnest advice: <span className="text-teal-600">Treat your academic project as your first startup</span>, not a formality. This is your launchpad—explore boldly, experiment fearlessly, and evolve continuously.
-            </p>
-            
-            <p>
-              Your professional future doesn't begin after graduation—it starts with what you build today.
-            </p>
-            
-            <div className="mt-8 pt-6 border-t border-gray-200">
-              <p className="text-gray-600">
-                <em>
-                  With faith in your potential,
-                  <br />
-                  <span className="font-semibold text-gray-800">— A. Vinay</span>, CEO & Founder
-                </em>
-              </p>
-            </div>
+          <div className="flex flex-col lg:flex-row gap-8 items-start">
+            {/* Content (80% width) */}
+            <motion.div
+              className="w-full lg:w-4/5"
+              initial={{ opacity: 0, x: -20 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.6 }}
+              viewport={{ once: true }}
+            >
+              <div className="bg-white p-8 sm:p-10 rounded-2xl shadow-lg duration-300 border border-gray-100">
+                <div className="prose prose-lg max-w-none text-gray-700 space-y-5">
+                  <p className="text-lg font-medium text-teal-600">
+                    Dear Students,
+                  </p>
+
+                  <p>
+                    When we began in 2007, we witnessed countless students
+                    struggling—not from lack of talent, but from absence of
+                    proper guidance during their crucial final-year projects.
+                  </p>
+
+                  <div className="relative pl-6 border-l-4 border-teal-400 italic bg-teal-50/50 p-4 rounded-r-lg">
+                    <p>
+                      That's why we created{" "}
+                      <strong className="font-semibold text-teal-700">
+                        Takeoff Edu Group
+                      </strong>
+                      —to provide real project mentorship that fosters growth,
+                      not just grades.
+                    </p>
+                  </div>
+
+                  <p>
+                    This academic support evolved into{" "}
+                    <strong className="font-semibold">
+                      Young Minds Technology Solutions
+                    </strong>
+                    , a full-fledged software company. Remarkably, it all began
+                    with those very college projects many underestimate. These
+                    projects became our training ground for innovation,
+                    problem-solving, and product development.
+                  </p>
+
+                  <div className="bg-teal-50 p-5 rounded-lg border border-teal-100">
+                    <p className="font-medium text-teal-800">
+                      Every product we've built, every client served, and every
+                      student we've hired traces back to those foundational
+                      project experiences.
+                    </p>
+                  </div>
+
+                  <p className="text-lg font-semibold text-gray-800">
+                    My earnest advice:{" "}
+                    <span className="text-teal-600">
+                      Treat your academic project as your first startup
+                    </span>
+                    , not a formality. This is your launchpad—explore boldly,
+                    experiment fearlessly, and evolve continuously.
+                  </p>
+
+                  <p>
+                    Your professional future doesn't begin after graduation—it
+                    starts with what you build today.
+                  </p>
+
+                  <div className="mt-8 pt-6 border-t border-gray-200">
+                    <p className="text-gray-600">
+                      <em>
+                        With faith in your potential,
+                        <br />
+                        <span className="font-semibold text-gray-800">
+                          — A. Vinay
+                        </span>
+                        , CEO & Founder
+                      </em>
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </motion.div>
+
+            {/* Image (20% width) */}
+            <motion.div
+              className="w-full lg:w-[25%] flex flex-col items-center lg:items-end gap-4 lg:sticky lg:top-20 z-10"
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.3 }}
+              viewport={{ once: true }}
+            >
+              <div className="relative w-45 h-72 sm:w-60 sm:h-80 rounded-2xl overflow-hidden shadow-lg group">
+                <img
+                  src="https://ymtsindia.com/assets/img/vinay.png"
+                  alt="A. Vinay, CEO"
+                  className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                />
+                <div className="absolute inset-0"></div>
+              </div>
+
+              <div className="text-center lg:text-right">
+                <h3 className="text-2xl font-bold text-gray-800">A. Vinay</h3>
+                <p className="text-teal-600 font-medium">Founder & CEO</p>
+                <p className="text-sm text-gray-500 mt-1 max-w-[180px]">
+                  Young Minds Technology Solutions
+                </p>
+              </div>
+            </motion.div>
           </div>
         </div>
-      </motion.div>
-
-      {/* Image (20% width) */}
-      <motion.div
-  className="w-full lg:w-[25%] flex flex-col items-center lg:items-end gap-4 lg:sticky lg:top-20 z-10"
-  initial={{ opacity: 0, y: 20 }}
-  whileInView={{ opacity: 1, y: 0 }}
-  transition={{ duration: 0.6, delay: 0.3 }}
-  viewport={{ once: true }}
->
-  <div className="relative w-45 h-72 sm:w-60 sm:h-80 rounded-2xl overflow-hidden shadow-lg group">
-    <img
-      src="https://ymtsindia.com/assets/img/vinay.png"
-      alt="A. Vinay, CEO"
-      className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
-    />
-    <div className="absolute inset-0"></div>
-  </div>
-
-  <div className="text-center lg:text-right">
-    <h3 className="text-2xl font-bold text-gray-800">A. Vinay</h3>
-    <p className="text-teal-600 font-medium">Founder & CEO</p>
-    <p className="text-sm text-gray-500 mt-1 max-w-[180px]">
-      Young Minds Technology Solutions
-    </p>
-  </div>
-</motion.div>
-
-    </div>
-  </div>
-</section>
+      </section>
 
       {/* Stats Section */}
       <section ref={ref} className="py-20 bg-[#34B3AA] text-white">
@@ -4595,32 +4677,28 @@ const TakeoffPortfolio = () => {
                           <motion.div
                             key={index}
                             whileHover={{ y: -10 }}
-                            className="bg-gray-50 rounded-xl shadow-lg overflow-hidden"
+                            className="bg-gray-50 rounded-xl shadow-lg overflow-hidden relative"
                           >
                             <div className="relative h-48 overflow-hidden">
-                              {project.media.type === "video" ? (
-                                <iframe
-                                  src={project.media.src}
-                                  title={project.title}
-                                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                                  allowFullScreen
-                                  className="w-full h-full object-cover"
-                                  onError={(e) =>
-                                    (e.target.src = project.media.fallback)
-                                  }
-                                ></iframe>
-                              ) : (
-                                <img
-                                  src={project.media.src}
-                                  alt={project.title}
-                                  className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
-                                  loading="lazy"
-                                  onError={(e) =>
-                                    (e.target.src = project.media.fallback)
-                                  }
-                                />
-                              )}
+                              <iframe
+                                src={`${project.media.src}${
+                                  isMuted ? "&mute=1" : "&mute=0"
+                                }&autoplay=1&enablejsapi=1&controls=1`}
+                                title={project.title}
+                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                                allowFullScreen
+                                className="w-full h-full object-cover"
+                                onError={(e) =>
+                                  (e.target.src = project.media.fallback)
+                                }
+                              ></iframe>
                               <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
+                              <button
+                                onClick={toggleMute}
+                                className="absolute top-2 right-2 bg-white/80 text-gray-800 p-2 rounded-full hover:bg-white transition mute-toggle"
+                              >
+                                {isMuted ? "🔇" : "🔊"}
+                              </button>
                             </div>
                             <div className="p-6">
                               <h3 className="text-lg font-bold text-gray-900 mb-2">

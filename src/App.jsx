@@ -4,7 +4,7 @@ import TakeoffPortfolio from './components/LandingPage'
 
 const App = () => {
   return (
-    <BrowserRouter>
+    <BrowserRouter basename='/presentation'>
     <Routes>
       <Route path="/" element={<TakeoffPortfolio/>}/>
     </Routes>
