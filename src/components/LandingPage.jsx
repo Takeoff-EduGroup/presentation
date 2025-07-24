@@ -1170,8 +1170,8 @@ const TakeoffPortfolio = () => {
             "Improved Control Strategy, Power Management & Capacity Optimization, Hybrid AC/DC Microgrids-Review",
           media: {
             type: "video",
-            src: "https://youtu.be/gWNhM5segLc?si=GMP15wg_i5p9zFHU",
-            fallback: "https://youtu.be/gWNhM5segLc?si=GMP15wg_i5p9zFHU",
+            src: "https://www.youtube.com/embed/gWNhM5segLc?si=kW8ZCEU1JK2omL8i",
+            fallback: "https://www.youtube.com/embed/gWNhM5segLc?si=kW8ZCEU1JK2omL8i",
           },
           description:
             "This video presents an advanced control strategy for hybrid AC/DC microgrids, focusing on reactive power compensation and reduction in the capacity of interlinking converters through Electric Vehicle (EV) participation. The integration of EVs as active agents enables dynamic power balancing and enhances system efficiency.",
