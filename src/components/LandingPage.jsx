@@ -1,4 +1,5 @@
 import React, { useState, useEffect, useRef } from "react";
+import YouTube from "react-youtube";
 import { Link } from "react-router-dom";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay, EffectFade, Navigation, Pagination } from "swiper/modules";
@@ -181,15 +182,7 @@ const TakeoffPortfolio = () => {
 
   const toggleMute = () => {
     setIsMuted((prev) => !prev);
-    const iframes = document.querySelectorAll("iframe");
-    iframes.forEach((iframe) => {
-      const src = iframe.src;
-      if (isMuted) {
-        iframe.src = src.replace("mute=1", "mute=0");
-      } else {
-        iframe.src = src.replace("mute=0", "mute=1");
-      }
-    });
+
   };
 
   useEffect(() => {
@@ -1001,28 +994,28 @@ const TakeoffPortfolio = () => {
       icon: <FaLaptopCode className="text-2xl text-[#34B3AA]" />,
       latestProjects: [
         {
-          title: "Secure File Storage",
+          title: "CLOUD DATA AUDITION TECHNIQUES WITH A PRIVACY AND SECURITY FOCUS",
           media: {
             type: "video",
-            src: "https://www.youtube.com/embed/example3",
+            src: "https://www.youtube.com/embed/2pZsi2TlZdQ?si=L92bkiVaEGjx_U1W",
             fallback:
-              "https://via.placeholder.com/2070x1380?text=Secure+Storage",
+              "https://www.youtube.com/embed/2pZsi2TlZdQ?si=L92bkiVaEGjx_U1W",
           },
           description:
-            "Encrypted cloud storage solution with blockchain verification",
-          link: "https://takeoffprojects.com/projects/secure-storage",
+            "where user can remotely store their data into the cloud so as to enjoy the on-demand high-quality applications and services from a shared pool of configurable computing resources",
+          link: "https://takeoffprojects.com/",
         },
         {
-          title: "Network Security Monitor",
+          title: "A Distributed Publisher Driven Secure Data Sharing Scheme For Information Centric Iot",
           media: {
-            type: "image",
-            src: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=2070&auto=format&fit=crop",
+            type: "video",
+            src: "https://www.youtube.com/embed/wfdjFphTAbc?si=0oewqlp1x1BMYyj5",
             fallback:
-              "https://via.placeholder.com/2070x1380?text=Network+Security",
+              "https://www.youtube.com/embed/wfdjFphTAbc?si=0oewqlp1x1BMYyj5",
           },
           description:
-            "Real-time network intrusion detection and prevention system",
-          link: "https://takeoffprojects.com/projects/network-security",
+            "A secure data-sharing scheme for Information-Centric IoT, using distributed publishers and CP-ABE to ensure authorized access and reduce overhead",
+          link: "https://takeoffprojects.com/",
         },
       ],
       LatestProjects: [
@@ -4667,67 +4660,56 @@ const TakeoffPortfolio = () => {
                 )}
 
                 {activeTab === "Latest Ideas" && (
-                  <div>
-                    <h4 className="text-2xl font-semibold text-gray-900 mb-4">
-                      Latest Project Ideas
-                    </h4>
-                    <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                      {selectedDepartment.latestProjects.map(
-                        (project, index) => (
-                          <motion.div
-                            key={index}
-                            whileHover={{ y: -10 }}
-                            className="bg-gray-50 rounded-xl shadow-lg overflow-hidden relative"
-                          >
-                            <div className="relative h-48 overflow-hidden">
-                              <iframe
-                                src={`${project.media.src}${
-                                  isMuted ? "&mute=1" : "&mute=0"
-                                }&autoplay=1&enablejsapi=1&controls=1`}
-                                title={project.title}
-                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                                allowFullScreen
-                                className="w-full h-full object-cover"
-                                onError={(e) =>
-                                  (e.target.src = project.media.fallback)
-                                }
-                              ></iframe>
-                              <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
-                              <button
-                                onClick={toggleMute}
-                                className="absolute top-2 right-2 bg-white/80 text-gray-800 p-2 rounded-full hover:bg-white transition mute-toggle"
-                              >
-                                {isMuted ? "🔇" : "🔊"}
-                              </button>
-                            </div>
-                            <div className="p-6">
-                              <h3 className="text-lg font-bold text-gray-900 mb-2">
-                                {project.title}
-                              </h3>
-                              <p className="text-gray-700 mb-4 text-sm">
-                                {project.description}
-                              </p>
-                              <motion.div
-                                whileHover={{ scale: 1.05 }}
-                                whileTap={{ scale: 0.95 }}
-                              >
-                                <a
-                                  href={project.link}
-                                  target="_blank"
-                                  rel="noopener noreferrer"
-                                  className="inline-flex items-center bg-[#34B3AA] text-white px-4 py-2 rounded-full text-sm font-semibold hover:bg-[#2a8f88] transition shadow-md group"
-                                >
-                                  Learn More
-                                  <FaArrowRight className="ml-2 transition-transform group-hover:translate-x-1" />
-                                </a>
-                              </motion.div>
-                            </div>
-                          </motion.div>
-                        )
-                      )}
-                    </div>
-                  </div>
-                )}
+        <div>
+          <h4 className="text-2xl font-semibold text-gray-900 mb-4">
+            Latest Project Ideas
+          </h4>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            {selectedDepartment.latestProjects.map((project, index) => (
+              <motion.div
+                key={index}
+                whileHover={{ y: -10 }}
+                className="bg-gray-50 rounded-xl shadow-lg overflow-hidden relative"
+              >
+                <div className="relative h-48 overflow-hidden">
+                  <iframe
+                    src={`${project.media.src}${
+                      isMuted ? "&mute=1" : "&mute=0"
+                    }&autoplay=1&controls=1&showinfo=0&rel=0&modestbranding=1&enablejsapi=1`}
+                    title={project.title}
+                    allow="accelerometer;clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                    allowFullScreen
+                    className="w-full h-full object-cover"
+                    onError={(e) => (e.target.src = project.media.fallback)}
+                  ></iframe>
+                </div>
+                <div className="p-6">
+                  <h3 className="text-lg font-bold text-gray-900 mb-2">
+                    {project.title}
+                  </h3>
+                  <p className="text-gray-700 mb-4 text-sm">
+                    {project.description}
+                  </p>
+                  <motion.div
+                    whileHover={{ scale: 1.05 }}
+                    whileTap={{ scale: 0.95 }}
+                  >
+                    <a
+                      href={project.link}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center bg-[#34B3AA] text-white px-4 py-2 rounded-full text-sm font-semibold hover:bg-[#2a8f88] transition shadow-md group"
+                    >
+                      Learn More
+                      <FaArrowRight className="ml-2 transition-transform group-hover:translate-x-1" />
+                    </a>
+                  </motion.div>
+                </div>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      )}
 
                 {activeTab === "Resources" && (
                   <div>
