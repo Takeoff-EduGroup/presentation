@@ -320,7 +320,7 @@ const TakeoffPortfolio = () => {
     },
     {
       year: "2014",
-      title: "Young Minds Technology Solution Private Limited",
+      title: "Young Minds",
       color: "from-purple-400 to-purple-600",
       textColor: "text-purple-300",
       icon: (
@@ -364,7 +364,7 @@ const TakeoffPortfolio = () => {
           />
         </svg>
       ),
-      image: "https://takeoffupskill.com/assets/images/about1.webp", // Replace with your image path
+      image: "https://takeoffupskill.com/assets/images/blogs/best-software-training-institute-in-india.webp", // Replace with your image path
       description:
         "Takeoff upskill No.1 IT Software Training Courses Institute in INDIA, Best Online & Offline IT Courses with Certificate.",
     },
@@ -388,7 +388,7 @@ const TakeoffPortfolio = () => {
       name: "TTD",
       icon: "https://www.tirumala.org/NewImages/TTD-Logo.png",
       url: "https://www.tirumala.org/",
-      description: "Power solutions and batteries leader.",
+      description: "Official organization managing the Sri Venkateswara Temple in Tirumala, overseeing spiritual and administrative activities.",
     },
   ];
 
@@ -4246,7 +4246,7 @@ const TakeoffPortfolio = () => {
                 <h3 className="text-2xl font-bold text-gray-800">A. Vinay</h3>
                 <p className="text-teal-600 font-medium">Founder & CEO</p>
                 <p className="text-sm text-gray-500 mt-1 max-w-[180px]">
-                  Young Minds Technology Solutions
+                  Young Minds
                 </p>
               </div>
             </motion.div>
@@ -5351,240 +5351,254 @@ const TakeoffPortfolio = () => {
       </section>
 
       {/* Footer Section */}
-      <footer className="bg-gradient-to-b from-[#1a1c2c] via-[#2c2f45] to-[#1a1c2c] text-white relative">
-        {/* Background city skyline image */}
-        <div className="absolute inset-0 z-0 opacity-10 pointer-events-none">
-          <img
-            src="https://ymtsindia.com/assets/img/home-city-white.gif"
-            alt="City Skyline Watermark"
-            className="w-full h-full object-cover"
-          />
-        </div>
-        {/* Decorative glowing blobs */}
-        <div className="absolute top-0 left-0 w-full h-full opacity-10 z-0">
-          <div className="absolute top-0 left-0 w-64 h-64 bg-[#34B3AA] rounded-full blur-3xl mix-blend-overlay"></div>
-          <div className="absolute bottom-0 right-0 w-64 h-64 bg-purple-500 rounded-full blur-3xl mix-blend-overlay"></div>
-        </div>
-        {/* Main content */}
-        <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
-            {/* Logo + About */}
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6 }}
-              viewport={{ once: true }}
-              className="space-y-6"
-            >
-              <img
-                src="https://takeoffprojects.com/assets/images/logotakeoff3new1.png"
-                alt="Takeoff Projects"
-                className="h-16 hover:scale-105 transition-transform duration-300"
-              />
-              <p className="text-gray-300 text-sm leading-relaxed">
-                Empowering students with cutting-edge project development,
-                internship training, and technical mentorship to bridge the gap
-                between academia and industry.
-              </p>
-            </motion.div>
+      <footer className="bg-gradient-to-b from-[#1a1c2c] via-[#2c2f45] to-[#1a1c2c] text-white relative overflow-hidden">
+      {/* Enhanced background with better contrast */}
+      <div className="absolute inset-0 z-0 opacity-20 pointer-events-none">
+        <div className="absolute inset-0 bg-black/30"></div>
+        <img
+          src="https://ymtsindia.com/assets/img/home-city-white.gif"
+          alt="City Skyline Watermark"
+          className="w-full h-full object-cover object-bottom"
+        />
+      </div>
 
-            {/* Quick Links */}
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.1 }}
-              viewport={{ once: true }}
-            >
-              <h3 className="text-xl font-bold mb-6 text-white">Quick Links</h3>
-              <ul className="space-y-3 text-gray-300">
-                {[
-                  { name: "Home", path: "/", icon: <FaHome /> },
-                  {
-                    name: "Services",
-                    path: "https://takeoffprojects.com/",
-                    icon: <FaServer />,
-                  },
-                  {
-                    name: "Projects",
-                    path: "https://takeoffprojects.com/",
-                    icon: <FaProjectDiagram />,
-                  },
-                  {
-                    name: "Courses",
-                    path: "https://takeoffupskill.com/",
-                    icon: <FaGraduationCap />,
-                  },
-                  {
-                    name: "Contact",
-                    path: "https://takeoffprojects.com/",
-                    icon: <FaHeadset />,
-                  },
-                ].map((link, i) => (
-                  <motion.li
-                    key={i}
-                    whileHover={{ x: 5 }}
-                    transition={{ type: "spring", stiffness: 300 }}
+      {/* Decorative glowing blobs - adjusted for better contrast */}
+      <div className="absolute top-0 left-0 w-full h-full opacity-15 z-0">
+        <div className="absolute top-0 left-0 w-64 h-64 bg-[#34B3AA] rounded-full blur-3xl mix-blend-soft-light"></div>
+        <div className="absolute bottom-0 right-0 w-64 h-64 bg-purple-500 rounded-full blur-3xl mix-blend-soft-light"></div>
+      </div>
+
+      {/* Main content with improved text contrast */}
+      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
+          {/* Logo + About */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6 }}
+            viewport={{ once: true }}
+            className="space-y-6"
+          >
+            <img
+              src="https://takeoffprojects.com/assets/images/logotakeoff3new1.png"
+              alt="Takeoff Projects"
+              className="h-16 hover:scale-105 transition-transform duration-300"
+            />
+            <p className="text-gray-100 text-sm leading-relaxed">
+              Empowering students with cutting-edge project development,
+              internship training, and technical mentorship to bridge the gap
+              between academia and industry.
+            </p>
+          </motion.div>
+
+          {/* Quick Links */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.1 }}
+            viewport={{ once: true }}
+          >
+            <h3 className="text-xl font-bold mb-6 text-white">Quick Links</h3>
+            <ul className="space-y-3 text-gray-100">
+              {[
+                { name: "Home", path: "/", icon: <FaHome /> },
+                {
+                  name: "Services",
+                  path: "https://takeoffprojects.com/",
+                  icon: <FaServer />,
+                },
+                {
+                  name: "Projects",
+                  path: "https://takeoffprojects.com/",
+                  icon: <FaProjectDiagram />,
+                },
+                {
+                  name: "Courses",
+                  path: "https://takeoffupskill.com/",
+                  icon: <FaGraduationCap />,
+                },
+                {
+                  name: "Contact",
+                  path: "https://takeoffprojects.com/",
+                  icon: <FaHeadset />,
+                },
+              ].map((link, i) => (
+                <motion.li
+                  key={i}
+                  whileHover={{ x: 5 }}
+                  transition={{ type: "spring", stiffness: 300 }}
+                >
+                  <Link
+                    to={link.path}
+                    className="flex items-center hover:text-white transition group"
                   >
-                    <Link
-                      to={link.path}
-                      className="flex items-center hover:text-white transition"
-                    >
-                      <span className="w-8 h-8 mr-3 bg-gray-700 rounded-full flex items-center justify-center group-hover:bg-gradient-to-r from-[#34B3AA] to-purple-500 transition-all duration-300">
-                        {link.icon}
-                      </span>
+                    <span className="w-8 h-8 mr-3 bg-gray-700/50 rounded-full flex items-center justify-center group-hover:bg-gradient-to-r from-[#34B3AA] to-purple-500 transition-all duration-300">
+                      {link.icon}
+                    </span>
+                    <span className="group-hover:text-[#34B3AA] transition-colors duration-200">
                       {link.name}
-                    </Link>
-                  </motion.li>
-                ))}
-              </ul>
-            </motion.div>
+                    </span>
+                  </Link>
+                </motion.li>
+              ))}
+            </ul>
+          </motion.div>
 
-            {/* Contact Info */}
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.2 }}
-              viewport={{ once: true }}
-            >
-              <h3 className="text-xl font-bold mb-6 text-white">Contact Us</h3>
-              <ul className="space-y-4 text-gray-300 text-sm">
-                <li className="flex items-start">
-                  <span className="w-8 h-8 bg-gradient-to-r from-[#34B3AA] to-teal-500 rounded-full mr-3 flex justify-center items-center mt-1">
-                    <FaMapMarkerAlt />
-                  </span>
+          {/* Contact Info */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.2 }}
+            viewport={{ once: true }}
+          >
+            <h3 className="text-xl font-bold mb-6 text-white">Contact Us</h3>
+            <ul className="space-y-4 text-gray-100 text-sm">
+              <li className="flex items-start">
+                <span className="w-8 h-8 bg-gradient-to-r from-[#34B3AA] to-teal-500 rounded-full mr-3 flex justify-center items-center mt-1 flex-shrink-0">
+                  <FaMapMarkerAlt className="text-xs" />
+                </span>
+                <span>
                   1st Floor, 1-5-558, 2nd Street, Balaji Colony,
                   <br />
                   Tirupati, Andhra Pradesh - 517502
-                </li>
-                <li className="flex items-start">
-                  <span className="w-8 h-8 bg-gradient-to-r from-[#34B3AA] to-teal-500 rounded-full mr-3 flex justify-center items-center mt-1">
-                    <FaPhoneAlt />
-                  </span>
-                  <div className="space-y-1">
-                    <a href="tel:+919030333433" className="hover:underline">
-                      +91 903 033 3433
-                    </a>
-                    <br />
-                    <a href="tel:+919966062884" className="hover:underline">
-                      +91 996 606 2884
-                    </a>
-                    <br />
-                    <a href="tel:+919393939042" className="hover:underline">
-                      +91 939 393 9042
-                    </a>
-                  </div>
-                </li>
-                <li className="flex items-start">
-                  <span className="w-8 h-8 bg-gradient-to-r from-[#34B3AA] to-teal-500 rounded-full mr-3 flex justify-center items-center mt-1">
-                    <FaEnvelope />
-                  </span>
+                </span>
+              </li>
+              <li className="flex items-start">
+                <span className="w-8 h-8 bg-gradient-to-r from-[#34B3AA] to-teal-500 rounded-full mr-3 flex justify-center items-center mt-1 flex-shrink-0">
+                  <FaPhoneAlt className="text-xs" />
+                </span>
+                <div className="space-y-1">
                   <a
-                    href="mailto:info@takeoffprojects.com"
-                    className="hover:underline"
+                    href="tel:+919030333433"
+                    className="hover:underline hover:text-[#34B3AA] block"
                   >
-                    info@takeoffprojects.com
+                    +91 903 033 3433
                   </a>
-                </li>
-                <li className="flex items-start mt-6">
-                  <span className="w-8 h-8 bg-gradient-to-r from-[#34B3AA] to-teal-500 rounded-full mr-3 flex justify-center items-center mt-1">
-                    <FaClock />
-                  </span>
-                  <div>
-                    <p className="font-medium">Working Hours</p>
-                    <p>Mon–Sat: 10:00 AM – 07:00 PM</p>
-                  </div>
-                </li>
-              </ul>
-            </motion.div>
-
-            {/* Social Links */}
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.3 }}
-              viewport={{ once: true }}
-            >
-              <h3 className="text-xl font-bold mb-6 text-white">
-                Connect With Us
-              </h3>
-              <p className="text-sm text-gray-300 mb-6">
-                Follow us on social media to stay updated with our latest
-                projects, courses, and offers.
-              </p>
-              <div className="flex flex-wrap gap-3 mb-6">
-                {[
-                  {
-                    icon: <FaFacebookF />,
-                    link: "https://facebook.com/takeoffedugroup",
-                    color: "bg-blue-600",
-                  },
-                  {
-                    icon: <FaTwitter />,
-                    link: "https://x.com/Takeoffedugroup",
-                    color: "bg-blue-400",
-                  },
-                  {
-                    icon: <FaLinkedinIn />,
-                    link: "https://linkedin.com/company/takeoffedugroup",
-                    color: "bg-blue-700",
-                  },
-                  {
-                    icon: <FaInstagram />,
-                    link: "https://instagram.com/takeoffedugroup",
-                    color: "bg-pink-600",
-                  },
-                  {
-                    icon: <FaYoutube />,
-                    link: "https://youtube.com/channel/UCm1FWCvpNmcnv991EHk5JNw",
-                    color: "bg-red-600",
-                  },
-                  {
-                    icon: <FaWhatsapp />,
-                    link: "https://wa.me/919030333433",
-                    color: "bg-green-500",
-                  },
-                ].map((social, index) => (
                   <a
-                    key={index}
-                    href={social.link}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className={`p-3 rounded-full text-white ${social.color} hover:opacity-90 transition`}
+                    href="tel:+919966062884"
+                    className="hover:underline hover:text-[#34B3AA] block"
                   >
-                    {social.icon}
+                    +91 996 606 2884
                   </a>
-                ))}
-              </div>
-            </motion.div>
-          </div>
-        </div>
-
-        {/* Bottom bar */}
-        <div className="bg-[#12131a] border-t border-gray-700 py-6 relative z-10">
-          <div className="max-w-7xl mx-auto px-4 flex flex-col md:flex-row justify-between items-center">
-            <p className="text-gray-400 text-sm text-center md:text-left">
-              © {new Date().getFullYear()} Takeoff Projects. All rights
-              reserved.
-            </p>
-            <div className="flex gap-4 mt-3 md:mt-0">
-              {[
-                "Privacy Policy",
-                "Terms of Service",
-                "Cookie Policy",
-                "Sitemap",
-              ].map((item, i) => (
+                  <a
+                    href="tel:+919393939042"
+                    className="hover:underline hover:text-[#34B3AA] block"
+                  >
+                    +91 939 393 9042
+                  </a>
+                </div>
+              </li>
+              <li className="flex items-start">
+                <span className="w-8 h-8 bg-gradient-to-r from-[#34B3AA] to-teal-500 rounded-full mr-3 flex justify-center items-center mt-1 flex-shrink-0">
+                  <FaEnvelope className="text-xs" />
+                </span>
                 <a
-                  key={i}
-                  href="#"
-                  className="text-xs text-gray-400 hover:text-[#34B3AA] transition hover:underline"
+                  href="mailto:info@takeoffprojects.com"
+                  className="hover:underline hover:text-[#34B3AA]"
                 >
-                  {item}
+                  info@takeoffprojects.com
                 </a>
+              </li>
+              <li className="flex items-start mt-6">
+                <span className="w-8 h-8 bg-gradient-to-r from-[#34B3AA] to-teal-500 rounded-full mr-3 flex justify-center items-center mt-1 flex-shrink-0">
+                  <FaClock className="text-xs" />
+                </span>
+                <div>
+                  <p className="font-medium">Working Hours</p>
+                  <p>Mon–Sat: 10:00 AM – 07:00 PM</p>
+                </div>
+              </li>
+            </ul>
+          </motion.div>
+
+          {/* Social Links */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.3 }}
+            viewport={{ once: true }}
+          >
+            <h3 className="text-xl font-bold mb-6 text-white">
+              Connect With Us
+            </h3>
+            <p className="text-sm text-gray-100 mb-6">
+              Follow us on social media to stay updated with our latest
+              projects, courses, and offers.
+            </p>
+            <div className="flex flex-wrap gap-3 mb-6">
+              {[
+                {
+                  icon: <FaFacebookF />,
+                  link: "https://facebook.com/takeoffedugroup",
+                  color: "bg-blue-600 hover:bg-blue-700",
+                },
+                {
+                  icon: <FaTwitter />,
+                  link: "https://x.com/Takeoffedugroup",
+                  color: "bg-blue-400 hover:bg-blue-500",
+                },
+                {
+                  icon: <FaLinkedinIn />,
+                  link: "https://linkedin.com/company/takeoffedugroup",
+                  color: "bg-blue-700 hover:bg-blue-800",
+                },
+                {
+                  icon: <FaInstagram />,
+                  link: "https://instagram.com/takeoffedugroup",
+                  color: "bg-pink-600 hover:bg-pink-700",
+                },
+                {
+                  icon: <FaYoutube />,
+                  link: "https://youtube.com/channel/UCm1FWCvpNmcnv991EHk5JNw",
+                  color: "bg-red-600 hover:bg-red-700",
+                },
+                {
+                  icon: <FaWhatsapp />,
+                  link: "https://wa.me/919030333433",
+                  color: "bg-green-500 hover:bg-green-600",
+                },
+              ].map((social, index) => (
+                <motion.a
+                  key={index}
+                  href={social.link}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className={`p-3 rounded-full text-white ${social.color} transition transform hover:scale-110`}
+                  whileHover={{ y: -3 }}
+                >
+                  {social.icon}
+                </motion.a>
               ))}
             </div>
+          </motion.div>
+        </div>
+      </div>
+
+      {/* Bottom bar with improved contrast */}
+      <div className="bg-[#12131a] border-t border-gray-800 py-6 relative z-10">
+        <div className="max-w-7xl mx-auto px-4 flex flex-col md:flex-row justify-between items-center">
+          <p className="text-gray-300 text-sm text-center md:text-left">
+            © {new Date().getFullYear()} Takeoff Projects. All rights reserved.
+          </p>
+          <div className="flex gap-4 mt-3 md:mt-0">
+            {[
+              "Privacy Policy",
+              "Terms of Service",
+              "Cookie Policy",
+              "Sitemap",
+            ].map((item, i) => (
+              <a
+                key={i}
+                href="#"
+                className="text-xs text-gray-300 hover:text-[#34B3AA] transition hover:underline"
+              >
+                {item}
+              </a>
+            ))}
           </div>
         </div>
-      </footer>
+      </div>
+    </footer>
     </div>
   );
 };
